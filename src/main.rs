@@ -1,11 +1,11 @@
-use std::net::SocketAddr;
+use std::net::IpAddr;
 
 #[macro_use]
 extern crate rocket;
 
 #[get("/")]
-fn get_ip(remote_addr: SocketAddr) -> String {
-    format!("{}", remote_addr.ip())
+fn get_ip(ip: IpAddr) -> String {
+    format!("{}", ip)
 }
 
 #[launch]
